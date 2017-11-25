@@ -1,6 +1,13 @@
+body {
+	background-image: url(./assets/images/four_horsemen.jpg);
+		background-size: 100%
+	} 
+
+
 .col-md-3 {
 	color: white;
 	opacity: .75;
-	border: 1px white;
+	border: 2px solid white;
 	text-align: center;
 }
+
