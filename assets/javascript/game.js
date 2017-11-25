@@ -15,7 +15,7 @@ var c = 10;
 remaining.innerHTML = c;
 
 function generateUnderscore() {
-	for (var i = 0; i < currentword.length; i++) {
+	for (var i = 0; i < currentword.length; i++) { 
 		underscore.push('_');
 	}
 	return underscore;
@@ -32,17 +32,28 @@ document.onkeyup = function(event) {
 	// replace underscore with correct letter
 		underscore[currentword.indexOf(userGuess)] = userGuess;
 		word.innerHTML = underscore;
+		if (underscore = currentword) {
+		alert("You Win!");	
 
 	}else {
 		lettersalreadyguessed.push(userGuess);
 		
 		console.log(lettersalreadyguessed);
-		c = c - 1
-		
-	}
-		
-		guess.innerHTML = lettersalreadyguessed;
+		c = c - 1;
 		remaining.innerHTML = c;
-};
+		guess.innerHTML = lettersalreadyguessed;
+		//	if (c = 0){
+			//	alert("You Lose");}
+
+		}
+
+	}
+
+	
+	}
+
+		
+
+
 	
 				

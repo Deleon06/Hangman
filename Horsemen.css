@@ -3,8 +3,15 @@ body {
 		background-size: 100%
 	} 
 
+#game {
+	color: white;
 
-.col-md-3 {
+}
+
+#theme {
+	color: white;
+}
+#white {
 	color: white;
 	opacity: .75;
 	border: 2px solid white;
