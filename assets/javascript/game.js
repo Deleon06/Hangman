@@ -13,48 +13,54 @@ var lettersalreadyguessed = [];
 var correctletter = [];
 var c = 10;
 
+if (start = true) {
+	remaining.innerHTML = c;
 
-remaining.innerHTML = c;
-
-function generateUnderscore() {
-	for (var i = 0; i < currentword.length; i++) { 
-		underscore.push('_');
+	function generateUnderscore() {
+		for (var i = 0; i < currentword.length; i++) { 
+			underscore.push('_');
+		}
+		return underscore;
 	}
-	return underscore;
-}
-	word.innerHTML = generateUnderscore();
-	console.log(currentword)
+		word.innerHTML = generateUnderscore();
+		console.log(currentword)
 
-document.onkeyup = function(event) {
-	var userGuess = event.key;
-	// if userGuess is right 
-	if (currentword.indexOf(userGuess) > -1 ) {
-	// add to the correct letter array
-		correctletter.push(userGuess);
-	// replace underscore with correct letter
-		underscore[currentword.indexOf(userGuess)] = userGuess;
-		word.innerHTML = underscore;
-		//if (underscore = currentword) {
-		//alert("You Win!");	
+	document.onkeyup = function(event) {
+		var userGuess = event.key;
+		// if userGuess is right 
+		if (currentword.indexOf(userGuess) > -1 ) {
+		// add to the correct letter array
+			correctletter.push(userGuess);
+		// replace underscore with correct letter
+			underscore[currentword.indexOf(userGuess)] = userGuess;
+			word.innerHTML = underscore;
+			//if (underscore = currentword) {
+			//alert("You Win!");	
 
-		}else if  
-			(currentword.indexOf(userGuess) === alphabet.indexOf(userGuess)){ 
+			}else if  
+				(currentword.indexOf(userGuess) === alphabet.indexOf(userGuess)){ 
+						
+			
+			
+				console.log(lettersalreadyguessed);
+
+			}else {
+				lettersalreadyguessed.push(userGuess);
 					
-		
-		
-		console.log(lettersalreadyguessed);
-
-		}else {
-			lettersalreadyguessed.push(userGuess);
-				
-			console.log(lettersalreadyguessed);
-			c = c - 1;
-			remaining.innerHTML = c;
-			guess.innerHTML = lettersalreadyguessed;
-				if (c = 0){
-					alert("You Lose");}
+				console.log(lettersalreadyguessed);
+				c--;
+				if (c < 0) {
+					alert("Game Over");
+					return false;
 				}
-			};
+				remaining.innerHTML = c;
+				guess.innerHTML = lettersalreadyguessed;
+				
+					}
+}
+				};
+
+
 
 
 
